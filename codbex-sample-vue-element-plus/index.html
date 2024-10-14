@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Vue 3 Form with Element Plus (ES6)</title>
+        <!-- Import style -->
+        <link rel="stylesheet" href="//unpkg.com/element-plus/dist/index.css" />
+        <!-- Import Vue 3 -->
+        <script src="//unpkg.com/vue@3"></script>
+        <!-- Import component library -->
+        <script src="//unpkg.com/element-plus"></script>
+    </head>
+
+    <body>
+        <div id="app">
+            <h1>Enhanced Form</h1>
+
+            <el-form :model="form" label-width="auto" style="max-width: 600px" @submit.prevent="submitForm">
+                <!-- Text Input -->
+                <el-form-item label="Name">
+                    <el-input type="text" v-model="formData.name">
+                    </el-input>
+                </el-form-item>
+
+                <!-- Date Picker -->
+                <el-form-item label="Select Date">
+                    <el-date-picker type="date" v-model="formData.date">
+                    </el-date-picker>
+                </el-form-item>
+
+                <!-- Radio Buttons -->
+                <el-form-item label="Resources">
+                    <el-radio-group v-model="formData.gender">
+                        <el-radio value="Male">Male</el-radio>
+                        <el-radio value="Female">Female</el-radio>
+                    </el-radio-group>
+                </el-form-item>
+
+                <!-- Slider -->
+                <el-form-item label="Age">
+                    <el-slider v-model="formData.age"></el-slider>
+                    <div>Age: {{ formData.age }}</div>
+                </el-form-item>
+
+                <!-- Switch -->
+                <el-form-item label="Agree to terms">
+                    <el-switch v-model="formData.agree" />
+                </el-form-item>
+
+                <!-- Dropdown -->
+                <el-form-item label="Select an option">
+                    <el-select v-model="formData.option" placeholder="please select your option">
+                        <el-option disabled value="">Please select</el-option>
+                        <el-option label="Option 1" value="1"></el-option>
+                        <el-option label="Option 2" value="2" />
+                        </el-option>
+                        <el-option label="Option 3" value="3" />
+                        </el-option>
+                    </el-select>
+                </el-form-item>
+
+                <!-- Language Switcher -->
+                <select v-model="locale" @change="changeLocale">
+                    <option value="en">English</option>
+                    <option value="fr">Français</option>
+                </select>
+
+                <h2>{{ $t('welcome') }}</h2>
+
+                <!-- Submit Button -->
+                <el-button type="primary">
+                    {{ $t('submit') }}
+                </el-button>
+                </form>
+
+                <!-- Output the Form Data -->
+                <div>
+                    <pre>{{ formData }}</pre>
+                </div>
+
+                <!-- Table for Remote Data -->
+                <div>
+                    <h2>Remote Data</h2>
+                    <el-table :data="users" :default-sort="{ prop: 'name', order: 'descending' }" stripe>
+                        <el-table-column prop="id" label="ID" sortable></el-table-column>
+                        <el-table-column prop="name" label="Name" sortable></el-table-column>
+                        <el-table-column prop="email" label="Email"></el-table-column>
+                    </el-table>
+                </div>
+
+        </div>
+
+        <!-- Import Vue I18n -->
+        <script src="https://unpkg.com/vue-i18n@9"></script>
+        <!-- Import JavaScript file as ES6 module -->
+        <script type="module" src="app.js"></script>
+    </body>
+
+</html>
