@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Element Plus with ESM Import Map</title>
+
+        <script type="importmap">
+            {
+                "imports": {
+                    "vue": "https://unpkg.com/vue@3.2.45/dist/vue.esm-browser.js",
+                    "element-plus": "https://cdn.jsdelivr.net/npm/element-plus@latest/dist/index.full.min.mjs",
+                    "element-plus/": "https://cdn.jsdelivr.net/npm/element-plus@latest/",
+                    "@element-plus/icons-vue": "https://cdn.jsdelivr.net/npm/@element-plus/icons-vue@2/dist/index.min.js"
+                }
+            }
+        </script>
+
+        <link rel="stylesheet" href="https://unpkg.com/element-plus@2.3.4/dist/index.css">
+
+        <!-- DO NOT USE IN PRODUCTION: Sample CSS from the Element Plus site -->
+        <!-- DO NOT USE IN PRODUCTION: Sample CSS from the Element Plus site -->
+        <!-- DO NOT USE IN PRODUCTION: Sample CSS from the Element Plus site -->
+        <!-- <link rel="stylesheet" href="https://element-plus.org/assets/style.B_e9f5k0.css"> -->
+        <link rel="stylesheet" href="https://element-plus.org/assets/style.B_e9f5k0.css">
+    </head>
+
+    <body>
+        <div id="app">
+            <p>Sample - <a :href="sampleUrl" target="_blank">{{ sampleTitle }}</a></p>
+            <hr>
+
+            <div class="mb-4">
+                <el-button>Default</el-button>
+                <el-button type="primary">Primary</el-button>
+                <el-button type="success">Success</el-button>
+                <el-button type="info">Info</el-button>
+                <el-button type="warning">Warning</el-button>
+                <el-button type="danger">Danger</el-button>
+            </div>
+
+            <div class="mb-4">
+                <el-button plain>Plain</el-button>
+                <el-button type="primary" plain>Primary</el-button>
+                <el-button type="success" plain>Success</el-button>
+                <el-button type="info" plain>Info</el-button>
+                <el-button type="warning" plain>Warning</el-button>
+                <el-button type="danger" plain>Danger</el-button>
+            </div>
+
+            <div class="mb-4">
+                <el-button round>Round</el-button>
+                <el-button type="primary" round>Primary</el-button>
+                <el-button type="success" round>Success</el-button>
+                <el-button type="info" round>Info</el-button>
+                <el-button type="warning" round>Warning</el-button>
+                <el-button type="danger" round>Danger</el-button>
+            </div>
+
+            <div>
+                <el-button :icon="Search" circle></el-button>
+                <el-button type="primary" :icon="Edit" circle></el-button>
+                <el-button type="success" :icon="Check" circle></el-button>
+                <el-button type="info" :icon="Message" circle></el-button>
+                <el-button type="warning" :icon="Star" circle></el-button>
+                <el-button type="danger" :icon="Delete" circle></el-button>
+            </div>
+
+        </div>
+        <script type="module" src="./main.js"></script>
+    </body>
+
+</html>

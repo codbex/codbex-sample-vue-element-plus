@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Element Plus with ESM Import Map</title>
+
+        <script type="importmap">
+            {
+                "imports": {
+                    "vue": "https://unpkg.com/vue@3.2.45/dist/vue.esm-browser.js",
+                    "element-plus": "https://cdn.jsdelivr.net/npm/element-plus@latest/dist/index.full.min.mjs",
+                    "element-plus/": "https://cdn.jsdelivr.net/npm/element-plus@latest/"
+                }
+            }
+        </script>
+
+        <link rel="stylesheet" href="https://unpkg.com/element-plus@2.3.4/dist/index.css">
+
+        <!-- DO NOT USE IN PRODUCTION: Sample CSS from the Element Plus site -->
+        <!-- DO NOT USE IN PRODUCTION: Sample CSS from the Element Plus site -->
+        <!-- DO NOT USE IN PRODUCTION: Sample CSS from the Element Plus site -->
+        <!-- <link rel="stylesheet" href="https://element-plus.org/assets/style.B_e9f5k0.css"> -->
+        <link rel="stylesheet" href="https://element-plus.org/assets/style.B_e9f5k0.css">
+    </head>
+
+    <body>
+        <div id="app">
+            <p>Sample - <a :href="sampleUrl" target="_blank">{{ sampleTitle }}</a></p>
+            <hr>
+
+            <div>
+                <el-checkbox v-model="checked1" label="Option 1" size="large" />
+                <el-checkbox v-model="checked2" label="Option 2" size="large" />
+            </div>
+            <div class="my-2">
+                <el-checkbox v-model="checked3" label="Option 1" />
+                <el-checkbox v-model="checked4" label="Option 2" />
+            </div>
+            <div class="mt-2">
+                <el-checkbox v-model="checked5" label="Option 1" size="small" />
+                <el-checkbox v-model="checked6" label="Option 2" size="small" />
+            </div>
+
+        </div>
+        <script type="module" src="./main.js"></script>
+    </body>
+
+</html>
