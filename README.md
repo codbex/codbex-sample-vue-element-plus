@@ -9,7 +9,7 @@ https://element-plus.org/en-US/guide/installation.html#import-in-browser
 ```html
 <head>
   <!-- Import style -->
-  <link rel="stylesheet" href="//unpkg.com/element-plus/dist/index.css" />
+  <link rel="stylesheet" href="../../styles.css">
   <!-- Import Vue 3 -->
   <script src="//unpkg.com/vue@3"></script>
   <!-- Import component library -->
