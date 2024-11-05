@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Element Plus with ESM Import Map</title>
+
+        <script type="importmap">
+            {
+                "imports": {
+                    "vue": "https://unpkg.com/vue@3.2.45/dist/vue.esm-browser.js",
+                    "element-plus": "https://cdn.jsdelivr.net/npm/element-plus@latest/dist/index.full.min.mjs",
+                    "element-plus/": "https://cdn.jsdelivr.net/npm/element-plus@latest/"
+                }
+            }
+        </script>
+
+        <link rel="stylesheet" href="../../styles.css">
+    </head>
+
+    <body>
+        <div id="app">
+            <p>Sample - <a :href="sampleUrl" target="_blank">{{ sampleTitle }}</a></p>
+            <hr>
+
+            <el-button plain @click="dialogTableVisible = true">
+                Open a Table nested Dialog
+            </el-button>
+
+            <el-button plain @click="dialogFormVisible = true">
+                Open a Form nested Dialog
+            </el-button>
+
+            <el-dialog v-model="dialogTableVisible" title="Shipping address" width="800">
+                <el-table :data="gridData">
+                    <el-table-column property="date" label="Date" width="150"></el-table-column>
+                    <el-table-column property="name" label="Name" width="200"></el-table-column>
+                    <el-table-column property="address" label="Address"></el-table-column>
+                </el-table>
+            </el-dialog>
+
+            <el-dialog v-model="dialogFormVisible" title="Shipping address" width="500">
+                <el-form :model="form">
+                    <el-form-item label="Promotion name" :label-width="formLabelWidth">
+                        <el-input v-model="form.name" autocomplete="off"></el-input>
+                    </el-form-item>
+                    <el-form-item label="Zones" :label-width="formLabelWidth">
+                        <el-select v-model="form.region" placeholder="Please select a zone">
+                            <el-option label="Zone No.1" value="shanghai"></el-option>
+                            <el-option label="Zone No.2" value="beijing"></el-option>
+                        </el-select>
+                    </el-form-item>
+                </el-form>
+                <template #footer>
+                    <div class="dialog-footer">
+                        <el-button @click="dialogFormVisible = false">Cancel</el-button>
+                        <el-button type="primary" @click="dialogFormVisible = false">
+                            Confirm
+                        </el-button>
+                    </div>
+                </template>
+            </el-dialog>
+
+
+        </div>
+        <script type="module" src="./main.js"></script>
+    </body>
+
+</html>
